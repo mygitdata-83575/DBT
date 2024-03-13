@@ -1,0 +1,19 @@
+Q1
+kd4_Ashish_83575>select A.SNAME,B.SNAME FROM SALESPEOPLE A,SALESPEOPLE B WHERE A.CITY = B.CITY and A.SNAME!=B.SNAME;
++--------+--------+
+| SNAME  | SNAME  |
++--------+--------+
+| Motika | Peel   |
+| Peel   | Motika |
++--------+--------+
+
+Q2
+kd4_Ashish_83575>select CNAME,CITY from CUSTOMERS where RATING = 100;
++---------+--------+
+| CNAME   | CITY   |
++---------+--------+
+| Hoffman | London |
+| Clemens | London |
+| Pereira | Rome   |
++---------+--------+
+

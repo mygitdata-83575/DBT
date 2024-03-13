@@ -1,0 +1,61 @@
+Q1.
+
+kd4_Ashish_83575>select count(*)from ORDERS where ODATE = '1990-10-03';
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+
+Q2
+kd4_Ashish_83575>select count(CITY) from CUSTOMERS where CITY is not null;
++-------------+
+| count(CITY) |
++-------------+
+|           7 |
++-------------+
+
+Q3
+kd4_Ashish_83575>select CNUM,min(AMT) from ORDERS group by CNUM order by 1;
++------+----------+
+| CNUM | min(AMT) |
++------+----------+
+| 2001 |   767.19 |
+| 2002 |  1713.23 |
+| 2003 |  5160.45 |
+| 2004 |    75.75 |
+| 2006 |  4723.00 |
+| 2007 |  1900.10 |
+| 2008 |    18.69 |
++------+----------+
+
+Q4
+kd4_Ashish_83575>select CNAME FROM CUSTOMERS WHERE CNAME LIKE 'G%' ORDER BY CNAME limit 1;
++----------+
+| CNAME    |
++----------+
+| Giovanni |
++----------+
+
+Q5
+kd4_Ashish_83575>SELECT max(RATING),CITY from CUSTOMERS group by CITY;
++-------------+----------+
+| max(RATING) | CITY     |
++-------------+----------+
+|         100 | London   |
+|         200 | Rome     |
+|         300 | San Jose |
+|         300 | Berlin   |
++-------------+----------+
+
+Q6.
+kd4_Ashish_83575>select ODATE,count(distinct SNUM) from ORDERS group by 1;
++------------+----------------------+
+| ODATE      | count(distinct SNUM) |
++------------+----------------------+
+| 1990-10-03 |                    4 |
+| 1990-10-04 |                    2 |
+| 1990-10-05 |                    1 |
+| 1990-10-06 |                    2 |
++------------+----------------------+
+

@@ -1,0 +1,7 @@
+Q1
+Does Ansi recognize the datatype DATE?
+Ans:-Yes in the format of 'YYYY-MM-DD'
+
+Q2
+Which subdivision of SQL is used to insert values in tables?
+Ans-insert into.

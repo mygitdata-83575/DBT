@@ -1,0 +1,16 @@
+Q1
+Which field of the customers table is the primary key?
+Ans-CNUM
+
+Q2
+What is the 4th column of the customers table?
+Ans-RATING
+
+Q3
+What is another word for row? for column?
+Ans-Row-Tuple,entity,Record
+columns-Field,Attribute,Method,key.
+
+Q4
+Why Isn't it possible to see the first five rows of a table?
+Ans-SQL tables represent unordered sets.So there is no such thing as the first first five rows or last row.

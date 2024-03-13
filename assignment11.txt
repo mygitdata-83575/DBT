@@ -1,0 +1,27 @@
+Q1
+
+kd4_Ashish_83575>select * from ORDERS where CNUM = (select CNUM from CUSTOMERS where CNAME = 'Cisneros');
++------+---------+------------+------+------+
+| ONUM | AMT     | ODATE      | CNUM | SNUM |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
++------+---------+------------+------+------+
+
+Q2
+kd4_Ashish_83575>select CNAME,RATING from CUSTOMERS where CNUM =any(select CNUM from ORDERS group by CNUM having sum(AMT)>(select avg(AMT) from ORDERS));
++---------+--------+
+| CNAME   | RATING |
++---------+--------+
+| Liu     |    200 |
+| Clemens |    100 |
++---------+--------+
+
+Q3
+kd4_Ashish_83575>select SNAME from SALESPEOPLE where SNUM =any(select SNUM from ORDERS group by SNUM having sum(AMT)>(select max(AMT) from ORDERS));
++-------+
+| SNAME |
++-------+
+| Peel  |
++-------+
+
