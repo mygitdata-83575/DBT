@@ -1,0 +1,50 @@
+Q1
+kd4_Ashish_83575>select CNAME,CITY,replace(RATING,RATING,"High Rating") from CUSTOMERS where RATING>=200 union select CNAME,CITY,replace(RATING,RATING,"Low Rating") from CUSTOMERS where RATING<200;
++----------+----------+--------------------------------------+
+| CNAME    | CITY     | replace(RATING,RATING,"High Rating") |
++----------+----------+--------------------------------------+
+| Giovanni | Rome     | High Rating                          |
+| Liu      | San Jose | High Rating                          |
+| Grass    | Berlin   | High Rating                          |
+| Cisneros | San Jose | High Rating                          |
+| Hoffman  | London   | Low Rating                           |
+| Clemens  | London   | Low Rating                           |
+| Pereira  | Rome     | Low Rating                           |
++----------+----------+--------------------------------------+
+
+Q2
+kd4_Ashish_83575>select SNAME,SNUM from SALESPEOPLE where SNUM = any(select SNUM from ORDERS group by SNUM having count(SNUM>1))
+ union
+  select CNAME,CNUM from CUSTOMERS where SNUM = any(select SNUM from ORDERS group by SNUM having count(SNUM>1));
++----------+------+
+| SNAME    | SNUM |
++----------+------+
+| Peel     | 1001 |
+| Serres   | 1002 |
+| Motika   | 1004 |
+| Rifkin   | 1007 |
+| Axelrod  | 1003 |
+| Hoffman  | 2001 |
+| Giovanni | 2002 |
+| Liu      | 2003 |
+| Grass    | 2004 |
+| Clemens  | 2006 |
+| Cisneros | 2008 |
+| Pereira  | 2007 |
++----------+------+
+
+Q3
+kd4_Ashish_83575>select SNUM from SALESPEOPLE where CITY="San Jose" union select CNUM from CUSTOMERS where CITY="San Jose" union all select ONUM from ORDERS where ODATE = "1990-10-03";
++------+
+| SNUM |
++------+
+| 1002 |
+| 2003 |
+| 2008 |
+| 3001 |
+| 3003 |
+| 3002 |
+| 3005 |
+| 3006 |
++------+
+
